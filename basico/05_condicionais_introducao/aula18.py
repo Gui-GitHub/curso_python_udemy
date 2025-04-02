@@ -1,9 +1,9 @@
 # if / elif      / else
 # se / se não se / se não
-# ... ou pass significa que é para ignorar aquele trecho por enquanto
+# Utilizando Debug no VsCode com json
 
-condicao1 = True
-condicao2 = True
+condicao1 = False
+condicao2 = False
 condicao3 = True
 condicao4 = True
 
