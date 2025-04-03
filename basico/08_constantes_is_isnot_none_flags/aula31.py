@@ -2,7 +2,8 @@
 Flag (Bandeira) - Marcar um local
 None = Não valor
 is e is not = é ou não é (tipo, valor, identidade)
-id = Identidade
+id = Identidade 
+É ruim declarar váriavel dentro de blocos ifs
 
 """
 condicao = False
