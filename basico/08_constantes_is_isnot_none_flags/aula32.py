@@ -10,9 +10,9 @@ numero = input('Digite um número: ')
 try:
     numero_convertido = int(numero)
     if numero_convertido % 2 == 0:
-        print('Seu número é par!')
+        print(f'O número {numero_convertido} é par!')
     else:
-        print('Seu número é impar')
+        print(f'O número {numero_convertido} é impar')
 except:
     print('Digite um número inteiro por favor!')
 
@@ -24,13 +24,15 @@ Bom dia 0-11, Boa tarde 12-17 e Boa noite 18-23.
 horario = input('Que horas são agora? ')
 
 try:
-    horario = int(horario)
-    if horario <= 11:
+    horario_int = int(horario)
+    if horario_int <= 11:
         print('Bom dia!')
-    elif horario <= 18:
+    elif horario_int <= 18:
         print('Boa tarde')
-    else:
+    elif horario_int <= 24:
         print('Boa noite')
+    else:
+        print(f'Não reconheço a hora {horario_int}')
 except:
     print('Digite um número inteiro por favor!')
 
@@ -41,10 +43,14 @@ menos escreva "Seu nome é curto"; se tiver entre 5 e 6 letras, escreva
 """
 
 nome = input('Escreva seu nome: ')
+tamanho_nome = len(nome)
 
-if len(nome) <=4:
-    print('Seu nome é curto')
-elif len(nome) <=6:
-    print('Seu nome é normal')
+if tamanho_nome > 1:
+    if tamanho_nome <=4:
+        print('Seu nome é curto')
+    elif tamanho_nome <=6:
+        print('Seu nome é normal')
+    else:
+        print('Seu nome é muito grande!')
 else:
-    print('Seu nome é muito grande!')
+    print('Digite mais de uma letra.')
