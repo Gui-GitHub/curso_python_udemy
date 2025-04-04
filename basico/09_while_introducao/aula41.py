@@ -1,4 +1,5 @@
 """ while/else """
+
 string = 'Valor qualquer'
 
 i = 0
