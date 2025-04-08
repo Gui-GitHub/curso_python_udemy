@@ -15,7 +15,7 @@ while True:
     opcao = input('[i]nserir [a]pagar [l]istar: ')
 
     if opcao == 'i':
-        os.system('clear')
+        os.system('cls')
         valor = input('Valor: ')
         lista.append(valor)
     elif opcao == 'a':
@@ -33,7 +33,7 @@ while True:
         except Exception:
             print('Erro desconhecido')
     elif opcao == 'l':
-        os.system('clear')
+        os.system('cls')
 
         if len(lista) == 0:
             print('Nada para listar')
