@@ -9,13 +9,15 @@ Não temos acesso a nomes de escopos internos nos escopos
 externos.
 A palavra global faz uma variável do escopo externo 
 ser a mesma no escopo interno.
+
+Aula debugando
 """
 
 x = 1
 
 
 def escopo():
-    # global x
+    # global x  # Global seria uma má pratica nesse caso, poderiamos passar como um parametro e modificar ele na hora da chamada
     x = 10
 
     def outra_funcao():
