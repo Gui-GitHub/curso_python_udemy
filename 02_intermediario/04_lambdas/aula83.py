@@ -13,8 +13,10 @@ dados_pessoa = {
     'altura': 1.6,
 }
 
-pessoas_completa = {**pessoa, **dados_pessoa}
-print(pessoas_completa)
+pessoas_completa1 = {**pessoa, **dados_pessoa}
+pessoas_completa2 = {*pessoa, *dados_pessoa}
+print(pessoas_completa1)
+print(pessoas_completa2)
 
 # args e kwargs
 # args (já vimos)
@@ -29,7 +31,7 @@ def mostro_argumentos_nomeados(*args, **kwargs):
 
 
 mostro_argumentos_nomeados(1, 2, 3, nome='Joana', qlq=123)
-mostro_argumentos_nomeados(**pessoas_completa)
+mostro_argumentos_nomeados(**pessoas_completa1)
 
 configuracoes = {
     'arg1': 1,
