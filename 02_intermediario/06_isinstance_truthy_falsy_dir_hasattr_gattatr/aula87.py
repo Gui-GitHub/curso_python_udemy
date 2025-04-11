@@ -6,17 +6,13 @@ lista = [
 
 for item in lista:
     if isinstance(item, set):
-        print('SET')
         item.add(5)
-        print(item, isinstance(item, set))
+        print('set: ', item, isinstance(item, set))
 
     elif isinstance(item, str):
-        print('STR')
-        print(item.upper())
+        print('str: ', item.upper())
 
     elif isinstance(item, (int, float)):
-        print('NUM')
-        print(item, item * 2)
+        print('num: ', item, item * 2)
     else:
-        print('OUTRO')
-        print(item)
+        print('outro: ',item)
