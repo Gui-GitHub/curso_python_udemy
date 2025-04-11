@@ -13,15 +13,20 @@ dc = {
     if chave != 'categoria'
 }
 
+print(dc)
+
 lista = [
     ('a', 'valor a'),
     ('b', 'valor a'),
     ('b', 'valor a'),
 ]
-dc = {
+
+dcLista = {
     chave: valor
     for chave, valor in lista
 }
+
+print(dcLista)
 
 s1 = {2 ** i for i in range(10)}
 print(s1)
