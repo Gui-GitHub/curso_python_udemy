@@ -4,7 +4,7 @@
 # Decoradores são usados para fazer o Python
 # usar as funções decoradoras em outras funções.
 
-def criar_funcao(func):
+def criar_funcao(func): # Função decoradora
     def interna(*args, **kwargs):
         print('Vou te decorar')
         for arg in args:

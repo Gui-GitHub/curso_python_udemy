@@ -1,9 +1,9 @@
 # Decoradores com parâmetros
-def fabrica_de_decoradores(a=None, b=None, c=None):
+def fabrica_de_decoradores(a=None, b=None, c=None): # Tenho acesso a este parametro em qualquer lugar do escopo
     def fabrica_de_funcoes(func):
         print('Decoradora 1')
 
-        def aninhada(*args, **kwargs):
+        def aninhada(*args, **kwargs): # Iner function, alinhada, uma função dentro da outra
             print('Parâmetros do decorador, ', a, b, c)
             print('Aninhada')
             res = func(*args, **kwargs)
@@ -12,7 +12,7 @@ def fabrica_de_decoradores(a=None, b=None, c=None):
     return fabrica_de_funcoes
 
 
-@fabrica_de_decoradores(1, 2, 3)
+@fabrica_de_decoradores(1, 2, 3) # Ele executa a minha função decoradora caso não tenha () mesmo sem parametro
 def soma(x, y):
     return x + y
 
