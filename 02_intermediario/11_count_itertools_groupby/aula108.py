@@ -1,8 +1,8 @@
-# count é um iterador sem fim (itertools)
+# count é um iterador sem fim (itertools) Infinito
 from itertools import count
 
-c1 = count(step=8, start=8)
-r1 = range(8, 100, 8)
+c1 = count(step=8, start=8) # Você não fala quando acaba
+r1 = range(8, 100, 8) # Aqui acaba
 
 print('c1', hasattr(c1, '__iter__'))
 print('c1', hasattr(c1, '__next__'))
