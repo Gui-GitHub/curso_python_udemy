@@ -3,8 +3,9 @@
 # Instância da class (objeto) - Tem os dados
 # Uma classe pode gerar várias instâncias.
 # Na classe o self é a própria instância.
+
 class Carro:
-    def __init__(self, nome):
+    def __init__(self, nome): #self é uma convenção mas poderia usar qualquer nome em primeiro
         self.nome = nome
 
     def acelerar(self):
@@ -13,9 +14,8 @@ class Carro:
 
 fusca = Carro('Fusca')
 fusca.acelerar()
-Carro.acelerar(fusca)
+Carro.acelerar(fusca) # Aqui eu preciso passar o argumento, dizer quem é o self, pois ele é o molde
 # print(fusca.nome)
-# fusca.acelerar()
 
 celta = Carro(nome='Celta')
 celta.acelerar()
