@@ -1,6 +1,7 @@
 # Mantendo estados dentro da classe
+
 class Camera:
-    def __init__(self, nome, filmando=False):
+    def __init__(self, nome, filmando=False): #Inicializo como falso
         self.nome = nome
         self.filmando = filmando
 
@@ -10,7 +11,7 @@ class Camera:
             return
 
         print(f'{self.nome} está filmando...')
-        self.filmando = True
+        self.filmando = True # Transforma em true, manipulo o estado
 
     def parar_filmar(self):
         if not self.filmando:
