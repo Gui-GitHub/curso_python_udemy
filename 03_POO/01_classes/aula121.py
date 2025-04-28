@@ -12,7 +12,7 @@ string = 'Luiz'
 print(string.upper())
 
 fusca = Carro('Fusca')
-print(fusca.nome)
+print(fusca.nome) #fusca.nome é literalmente self.nome
 fusca.acelerar()
 
 celta = Carro(nome='Celta')
