@@ -10,28 +10,28 @@ class Caneta:
     def __init__(self, cor):
         # private protected
         self.cor = cor
-        self._cor_tampa = None
+        self._cor_tampa = None # Coloco um _ para dizer que não deve ser usado esse atributo
 
     @property
     def cor(self):
-        print('ESTOU NO GETTER')
+        print('ESTOU NO GETTER') # Pego um valor
         return self._cor
 
-    @cor.setter
+    @cor.setter # Utilizo nome_property.setter para configurar um novo valor
     def cor(self, valor):
-        print('ESTOU NO SETTER')
+        print('ESTOU NO SETTER') # Configuro um valor
         self._cor = valor
 
     @property
     def cor_tampa(self):
         return self._cor_tampa
 
-    @cor_tampa.setter
+    @cor_tampa.setter # Com o setter, eu não acesso o atributo diretamente no __init__
     def cor_tampa(self, valor):
         self._cor_tampa = valor
 
 
-caneta = Caneta('Azul')
+caneta = Caneta('Azul') # Aqui entrei direto no __init__
 caneta.cor = 'Rosa'
 caneta.cor_tampa = 'Azul'
 print(caneta.cor)
