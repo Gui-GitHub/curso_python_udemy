@@ -11,15 +11,13 @@ class Pessoa:
 
 
 dados = {'nome': 'João', 'idade': 35}
-p1 = Pessoa(**dados)
-# p1.nome = 'EITA'
-# print(p1.idade)
+p1 = Pessoa(**dados) # Desempacotando meu dicionário
 # p1.__dict__['outra'] = 'coisa'
-# p1.__dict__['nome'] = 'EITA'
+# p1.__dict__['nome'] = 'EITA' # Ele é editavel
 # del p1.__dict__['nome']
 # print(p1.__dict__)
 # print(vars(p1))
 # print(p1.outra)
 # print(p1.nome)
-print(vars(p1))
+print(vars(p1)) # vars chama o dict
 print(p1.nome)
