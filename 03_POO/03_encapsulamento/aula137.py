@@ -29,16 +29,13 @@ class Carro:
     def fabricante(self, valor):
         self._fabricante = valor
 
-
 class Motor:
     def __init__(self, nome):
         self.nome = nome
 
-
 class Fabricante:
     def __init__(self, nome):
         self.nome = nome
-
 
 fusca = Carro('Fusca')
 volkswagen = Fabricante('Volkswagen')
