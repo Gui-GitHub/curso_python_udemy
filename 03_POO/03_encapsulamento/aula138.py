@@ -26,7 +26,7 @@ class Cliente(Pessoa): # Herança sendo usada, chamadno ela pela instancia
         print(self.nome, self.sobrenome, self.__class__.__name__)
 
 
-class Aluno(Pessoa):
+class Aluno(Pessoa): # Aqui uso Pessoa, já que tanto aluno quanto cliente possui atributos de Pessoa
     cpf = 'cpf aluno'
     ...
 
