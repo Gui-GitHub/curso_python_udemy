@@ -20,7 +20,7 @@ class Pessoa:
         print(self.nome, self.sobrenome, self.__class__.__name__)
 
 
-class Cliente(Pessoa):
+class Cliente(Pessoa): # Herança sendo usada, chamadno ela pela instancia
     def falar_nome_classe(self):
         print('EITA, nem saí da classe CLIENTE')
         print(self.nome, self.sobrenome, self.__class__.__name__)
