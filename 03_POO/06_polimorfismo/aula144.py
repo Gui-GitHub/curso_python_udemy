@@ -21,17 +21,17 @@ class Notificacao(ABC):
         self.mensagem = mensagem
 
     @abstractmethod
-    def enviar(self) -> bool: ...
+    def enviar(self) -> bool: ... # Identifiquei a abstração
 
 
 class NotificacaoEmail(Notificacao):
-    def enviar(self) -> bool:
+    def enviar(self) -> bool: # Sobrescrevendo o método (type notation)
         print('E-mail: enviando - ', self.mensagem)
         return True
 
 
 class NotificacaoSMS(Notificacao):
-    def enviar(self) -> bool:
+    def enviar(self) -> bool: # Sobrescrevendo o método
         print('SMS: enviando - ', self.mensagem)
         return False
 
@@ -46,7 +46,7 @@ def notificar(notificacao: Notificacao):
 
 
 notificacao_email = NotificacaoEmail('testando e-mail')
-notificar(notificacao_email)
+notificar(notificacao_email) # O objeto notificacao é polimorfico
 
 notificacao_sms = NotificacaoSMS('testando SMS')
 notificar(notificacao_sms)
