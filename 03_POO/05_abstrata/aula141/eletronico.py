@@ -14,7 +14,7 @@ class Eletronico:
             self._ligado = False
 
 
-class Smartphone(Eletronico, LogFileMixin):
+class Smartphone(Eletronico, LogFileMixin): # Herda de log graças ao import
     def ligar(self):
         super().ligar()
 
