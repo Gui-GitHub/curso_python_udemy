@@ -1,3 +1,8 @@
+# Teoria: python Special Methods, Magic Methods ou Dunder Methods
+# Dunder = Double Underscore = __dunder__
+# Antigo e útil: https://rszalski.github.io/magicmethods/
+# https://docs.python.org/3/reference/datamodel.html#specialnames
+
 # Exemplo de uso de dunder methods (métodos mágicos)
 # __lt__(self,other) - self < other
 # __le__(self,other) - self <= other
