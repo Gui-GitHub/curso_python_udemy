@@ -13,7 +13,7 @@ class OutroError(Exception):
 
 def levantar():
     exception_ = MeuError('a', 'b', 'c')
-    exception_.add_note('Olha a nota 1')
+    exception_.add_note('Olha a nota 1') # Novo (Python 3.11+)
     exception_.add_note('você errou isso')
     raise exception_
 
