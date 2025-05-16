@@ -1,7 +1,6 @@
 # Context Manager com função - Criando e Usando gerenciadores de contexto
 from contextlib import contextmanager
 
-
 @contextmanager
 def my_open(caminho_arquivo, modo):
     try:
