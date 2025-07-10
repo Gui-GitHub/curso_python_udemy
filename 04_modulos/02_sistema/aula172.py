@@ -1,52 +1,51 @@
-# os.path.getsize e os.stat para dados dos arquivos (tamanho em bytes)
+# Utiliza os módulos os.path.getsize e os.stat para obter dados dos arquivos (tamanho em bytes)
 import math
 import os
 from itertools import count
 
-
 def formata_tamanho(tamanho_em_bytes: int, base: int = 1000) -> str:
-    """Formata um tamanho, de bytes para o tamanho apropriado"""
+    """Formata um tamanho em bytes para uma string legível (KB, MB, GB, etc.)"""
 
-    # Original:
-    # https://stackoverflow.com/questions/5194057/better-way-to-convert-file-sizes-in-python
-
-    # Se o tamanho for menor ou igual a 0, 0B.
+    # Se o tamanho for menor ou igual a 0, retorna '0B'
     if tamanho_em_bytes <= 0:
         return "0B"
 
-    # Tupla com os tamanhos
-    #                      0    1     2     3     4     5
+    # Abreviações para cada ordem de grandeza
     abreviacao_tamanhos = "B", "KB", "MB", "GB", "TB", "PB"
-    # Logaritmo -> https://brasilescola.uol.com.br/matematica/logaritmo.htm
-    # math.log vai retornar o logaritmo do tamanho_em_bytes
-    # com a base (1000 por padrão), isso deve bater
-    # com o nosso índice na abreviação dos tamanhos
+
+    # Calcula o índice da abreviação usando logaritmo na base 1000 (ou base informada)
     indice_abreviacao_tamanhos = int(math.log(tamanho_em_bytes, base))
-    # Por quanto nosso tamanho deve ser dividido para
-    # gerar o tamanho correto.
+
+    # Calcula o valor correspondente à potência da base
     potencia = base ** indice_abreviacao_tamanhos
-    # Nosso tamanho final
+
+    # Converte o tamanho para a unidade apropriada
     tamanho_final = tamanho_em_bytes / potencia
-    # A abreviação que queremos
+
+    # Seleciona a abreviação correta
     abreviacao_tamanho = abreviacao_tamanhos[indice_abreviacao_tamanhos]
     return f'{tamanho_final:.2f} {abreviacao_tamanho}'
 
-
-caminho = os.path.join('/Users', 'luizotavio', 'Desktop', 'EXEMPLO')
+# Caminho da pasta a ser percorrida
+caminho = os.path.join(r'C:\Users', 'guilh', 'Downloads', 'teste_python')
 counter = count()
 
+# Percorre todas as pastas e arquivos a partir do caminho especificado
 for root, dirs, files in os.walk(caminho):
     the_counter = next(counter)
     print(the_counter, 'Pasta atual', root)
 
+    # Lista os diretórios encontrados na pasta atual
     for dir_ in dirs:
         print('  ', the_counter, 'Dir:', dir_)
 
+    # Lista os arquivos encontrados na pasta atual
     for file_ in files:
         caminho_completo_arquivo = os.path.join(root, file_)
-        # tamanho = os.path.getsize(caminho_completo_arquivo)
+        # Obtém informações do arquivo usando os.stat
         stats = os.stat(caminho_completo_arquivo)
         tamanho = stats.st_size
         print('  ', the_counter, 'FILE:', file_, formata_tamanho(tamanho))
-        # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
+        
+        # ATENÇÃO: Não descomente a linha abaixo, pois ela apaga o arquivo!
         # os.unlink(caminho_completo_arquivo)

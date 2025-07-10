@@ -5,9 +5,11 @@ import os
 import shutil
 
 HOME = os.path.expanduser('~')
-DESKTOP = os.path.join(HOME, 'Desktop')
-PASTA_ORIGINAL = os.path.join(DESKTOP, 'EXEMPLO')
-NOVA_PASTA = os.path.join(DESKTOP, 'NOVA_PASTA')
+print('HOME:', HOME)
+DOWNLOADS = os.path.join(HOME, 'Downloads')
+print('Downloads:', DOWNLOADS)
+PASTA_ORIGINAL = os.path.join(DOWNLOADS, 'teste_python')
+NOVA_PASTA = os.path.join(DOWNLOADS, 'teste_python_copia')
 
 os.makedirs(NOVA_PASTA, exist_ok=True)
 

@@ -9,7 +9,8 @@
 # Windows (antigo, cmd) = cls
 import os
 
-os.system('clear')
+# Limpa o terminal
+os.system('cls' if os.name == 'nt' else 'clear')
 os.system('echo "Hello world"')
 
 print('a' * 80)
