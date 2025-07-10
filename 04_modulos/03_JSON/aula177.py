@@ -2,6 +2,7 @@
 import json
 import os
 
+# Caminho absoluto do arquivo JSON
 NOME_ARQUIVO = 'aula177.json'
 CAMINHO_ABSOLUTO_ARQUIVO = os.path.abspath(
     os.path.join(
