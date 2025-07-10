@@ -4,6 +4,7 @@
 import calendar
 import locale
 
+# Configura o locale para o sistema operacional atual
 locale.setlocale(locale.LC_ALL, '')
 
-print(calendar.calendar(2022))
+print(calendar.calendar(2025))

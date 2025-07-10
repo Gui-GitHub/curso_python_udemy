@@ -10,13 +10,17 @@
 # 0 = segunda-feira | 6 = domingo
 import calendar
 
-# print(calendar.calendar(2022))
-# print(calendar.month(2022, 12))
-# numero_primeiro_dia, ultimo_dia = calendar.monthrange(2022, 12)
+# print(calendar.calendar(2025))
+# print(calendar.month(2025, 12))
+# numero_primeiro_dia, ultimo_dia = calendar.monthrange(2025, 12)
+
 # print(list(enumerate(calendar.day_name)))
 # print(calendar.day_name[numero_primeiro_dia])
-# print(calendar.day_name[calendar.weekday(2022, 12, ultimo_dia)])
-for week in calendar.monthcalendar(2022, 12):
+# print(calendar.day_name[calendar.weekday(2025, 12, ultimo_dia)])
+
+# Exemplo de uso do calendar para imprimir os dias do mês de Outubro de 2025
+print("Dias do mês de Outubro de 2025:")
+for week in calendar.monthcalendar(2025, 10):
     for day in week:
         if day == 0:
             continue

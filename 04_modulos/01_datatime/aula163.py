@@ -2,6 +2,8 @@
 # Docs:
 # https://dateutil.readthedocs.io/en/stable/relativedelta.html
 # https://docs.python.org/3/library/datetime.html#timedelta-objects
+# pip install python-dateutil types-python-dateutil
+
 from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
