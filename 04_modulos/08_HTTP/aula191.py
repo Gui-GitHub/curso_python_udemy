@@ -1,4 +1,6 @@
 # requests para requisições HTTP
+# pip install requests types-requests
+# Requests é uma biblioteca Python para fazer requisições HTTP de forma simples e intuitiva.
 # Tutorial -> https://youtu.be/Qd8JT0bnJGs
 import requests
 
