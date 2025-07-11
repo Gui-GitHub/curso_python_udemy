@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 parser = ArgumentParser()
 
 parser.add_argument(
-    '-b', '--basic',
+    '-b', '--basic', # basic é o nome do argumento
     help='Mostra "Olá mundo" na tela',
     # type=str, # Tipo do argumento
     metavar='STRING',
