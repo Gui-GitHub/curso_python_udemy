@@ -18,5 +18,6 @@ from dotenv import load_dotenv  # type: ignore
 
 load_dotenv()
 
-# print(os.environ)
+# Exemplo de uso de variáveis de ambiente
+print(os.environ)
 print(os.getenv('BD_PASSWORD'))
