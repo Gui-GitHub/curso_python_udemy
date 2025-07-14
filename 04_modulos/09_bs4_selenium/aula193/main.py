@@ -64,7 +64,8 @@ if __name__ == '__main__':
     search_input.send_keys('Hello World!')
     search_input.send_keys(Keys.ENTER)
 
-    results = browser.find_element(By.ID, 'search')
+    # clicando no primeiro link
+    results = browser.find_element(By.ID, 'rcnt')
     links = results.find_elements(By.TAG_NAME, 'a')
     links[0].click()
 
