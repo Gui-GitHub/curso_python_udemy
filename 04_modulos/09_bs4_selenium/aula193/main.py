@@ -1,5 +1,8 @@
 # type: ignore
 # Selenium - Automatizando tarefas no navegador
+# Precisamos do Driver para o navegador especifico
+# pip install selenium
+
 from pathlib import Path
 from time import sleep
 
@@ -19,7 +22,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 # Caminho para a raiz do projeto
 ROOT_FOLDER = Path(__file__).parent
 # Caminho para a pasta onde o chromedriver está
-CHROME_DRIVER_PATH = ROOT_FOLDER / 'drivers' / 'chromedriver'
+CHROME_DRIVER_PATH = ROOT_FOLDER / 'drivers' / 'chromedriver.exe'
 
 
 def make_chrome_browser(*options: str) -> webdriver.Chrome:
@@ -45,7 +48,6 @@ def make_chrome_browser(*options: str) -> webdriver.Chrome:
 if __name__ == '__main__':
     TIME_TO_WAIT = 10
 
-    # Example
     # options = '--headless', '--disable-gpu',
     options = ()
     browser = make_chrome_browser(*options)
