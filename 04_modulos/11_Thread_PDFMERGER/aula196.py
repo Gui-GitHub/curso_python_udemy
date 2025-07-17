@@ -1,4 +1,6 @@
-# (Parte 3) Threads - Executando processamentos em paralelo
+# Colocamos 2 processo para rodar em paralelo
+# é possível interromper um processo com outro processo
+# Threads - Executando processamentos em paralelo
 
 from threading import Lock, Thread
 from time import sleep
