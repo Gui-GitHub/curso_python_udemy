@@ -7,12 +7,13 @@
 # manipulação de grandes quantidades de informações.
 # Instalação necessária: pip install openpyxl
 # Documentação: https://openpyxl.readthedocs.io/en/stable/
-from pathlib import Path
 
+from pathlib import Path
 from openpyxl import Workbook, load_workbook
 from openpyxl.cell import Cell
 from openpyxl.worksheet.worksheet import Worksheet
 
+# caminhos
 ROOT_FOLDER = Path(__file__).parent
 WORKBOOK_PATH = ROOT_FOLDER / 'workbook.xlsx'
 
@@ -34,6 +35,6 @@ for row in worksheet.iter_rows(min_row=2):
             worksheet.cell(cell.row, 2, 23)
     print()
 
+# Caso altere algo na planilha
 # worksheet['B3'].value = 14
-
 workbook.save(WORKBOOK_PATH)
