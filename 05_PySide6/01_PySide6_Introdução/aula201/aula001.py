@@ -24,6 +24,8 @@
 #   Licenças são tópicos complexos, portanto, se oriente sobre elas
 #   antes de usar qualquer software de terceiros.
 #   https://tldrlegal.com/license/gnu-lesser-general-public-license-v3-(lgpl-3)
+#   pip install PySide6
+
 import PySide6.QtCore
 
 # Prints PySide6 version
