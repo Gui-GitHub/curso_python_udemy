@@ -13,13 +13,13 @@ class MyWindow(QMainWindow):
         self.central_widget = QWidget()
 
         self.setCentralWidget(self.central_widget)
-        self.setWindowTitle('Minha janela bonita')
+        self.setWindowTitle('Minha Primeira Janela!')
 
         # Botão
-        self.botao1 = self.make_button('Texto do botão')
+        self.botao1 = self.make_button('Título')
         self.botao1.clicked.connect(self.segunda_acao_marcada)  # type: ignore
 
-        self.botao2 = self.make_button('Botão 2')
+        self.botao2 = self.make_button('Título')
 
         self.botao3 = self.make_button('Terceiro')
 
@@ -28,7 +28,7 @@ class MyWindow(QMainWindow):
 
         self.grid_layout.addWidget(self.botao1, 1, 1, 1, 1)
         self.grid_layout.addWidget(self.botao2, 1, 2, 1, 1)
-        self.grid_layout.addWidget(self.botao3, 3, 1, 1, 2)
+        self.grid_layout.addWidget(self.botao3, 2, 1, 1, 2)
 
         # statusBar
         self.status_bar = self.statusBar()
@@ -36,6 +36,18 @@ class MyWindow(QMainWindow):
 
         # menuBar
         self.menu = self.menuBar()
+        self.menu.setStyleSheet("""
+            QMenuBar::item {
+            background: red;
+            padding: 8px 24px;
+            border-radius: 4px;
+            color: #fff;
+            }
+            QMenuBar::item:selected {
+            background: green;
+            color: #f0f0f0;
+            }
+        """)
         self.primeiro_menu = self.menu.addMenu('Primeiro menu')
         self.primeira_acao = self.primeiro_menu.addAction('Primeira ação')
         self.primeira_acao.triggered.connect(  # type:ignore
@@ -60,7 +72,6 @@ class MyWindow(QMainWindow):
         btn = QPushButton(text)
         btn.setStyleSheet('font-size: 80px;')
         return btn
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
