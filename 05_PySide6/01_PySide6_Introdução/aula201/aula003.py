@@ -7,6 +7,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QGridLayout, QPushButton, QWidget
 
 app = QApplication(sys.argv)
+central_widget = QWidget() # Cria um widget central
 
 botao = QPushButton('Título')
 botao.setStyleSheet('font-size: 80px;')
@@ -17,7 +18,6 @@ botao2.setStyleSheet('font-size: 80px;')
 botao3 = QPushButton('Texto em linha')
 botao3.setStyleSheet('font-size: 40px;')
 
-central_widget = QWidget() # Cria um widget central
 layout = QGridLayout()
 central_widget.setLayout(layout)
 
