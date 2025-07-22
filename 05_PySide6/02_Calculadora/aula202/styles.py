@@ -23,25 +23,6 @@ qss = f"""
     }}
 """
 
-
-# def setupTheme():
-#     """
-#     Sets up the application's dark theme using qdarktheme with custom colors and additional QSS styles.
-#     """
-#     qdarktheme.setup_theme(
-#         theme='dark',
-#         corner_shape='rounded',
-#         custom_colors={
-#             "[dark]": {
-#                 "primary": f"{PRIMARY_COLOR}",
-#             },
-#             "[light]": {
-#                 "primary": f"{PRIMARY_COLOR}",
-#             },
-#         },
-#         additional_qss=qss
-#     )
-
 def setupTheme():
     import qdarktheme
     from PySide6.QtWidgets import QApplication
