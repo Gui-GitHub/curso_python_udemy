@@ -8,6 +8,8 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
+# Esse arquivo é gerado automaticamente pelo PySide6 e contém a definição da interface do usuário.
+
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -85,8 +87,8 @@ class Ui_MainWindow(object):
 
     # Método que traduz o texto da interface do usuário
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.labelResult.setText(QCoreApplication.translate("MainWindow", u"Voltei!", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"QTDesigners Exemplos", None))
+        self.labelResult.setText(QCoreApplication.translate("MainWindow", u"Nome!", None))
         self.labelName.setText(QCoreApplication.translate("MainWindow", u"Seu nome:", None))
         self.lineName.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Digite seu nome", None))
         self.buttonSend.setText(QCoreApplication.translate("MainWindow", u"Enviar", None))
