@@ -19,7 +19,9 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QMenuBar, QPushButton,
     QSizePolicy, QStatusBar, QWidget)
 
+# Classe que representa a janela principal da aplicação
 class Ui_MainWindow(object):
+    # Método que configura a interface do usuário
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -81,6 +83,7 @@ class Ui_MainWindow(object):
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
+    # Método que traduz o texto da interface do usuário
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.labelResult.setText(QCoreApplication.translate("MainWindow", u"Voltei!", None))
