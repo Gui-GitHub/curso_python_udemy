@@ -5,12 +5,13 @@ from PySide6.QtCore import QObject, QThread, Signal
 from PySide6.QtWidgets import QApplication, QWidget
 from ui_workerui import Ui_myWidget
 
-
+# Classes de worker que herdam de QObject
 class Worker1(QObject):
     started = Signal(str)
     progressed = Signal(str)
     finished = Signal(str)
 
+    # Método que será executado na thread
     def doWork(self):
         value = '0'
         self.started.emit(value)
@@ -20,7 +21,7 @@ class Worker1(QObject):
             time.sleep(1)
         self.finished.emit(value)
 
-
+# Worker2 é um exemplo de outro worker com um método diferente
 class Worker2(QObject):
     started = Signal(str)
     progressed = Signal(str)
