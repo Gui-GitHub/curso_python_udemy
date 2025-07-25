@@ -2,6 +2,9 @@
 # Doc: https://pymysql.readthedocs.io/en/latest/
 # Pypy: https://pypi.org/project/pymysql/
 # GitHub: https://github.com/PyMySQL/PyMySQL
+# PyMySQL é um cliente MySQL feito em Python puro, ou seja, não depende de bibliotecas externas como o MySQLdb.
+# pip install pymysql
+
 import os
 from typing import cast
 
