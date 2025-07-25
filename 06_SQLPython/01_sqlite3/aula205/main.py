@@ -43,7 +43,7 @@ sql = (
     f'INSERT INTO {TABLE_NAME} '
     '(name, weight) '
     'VALUES '
-    '(:nome, :peso)'
+    '(:nome, :peso)' #Podemos usar (?,?), para nomear usariamos (joana,4)
 )
 
 # Inserindo dados
