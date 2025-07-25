@@ -16,17 +16,6 @@ cursor = connection.cursor()
 # CRUD - Create Read   Update Delete
 # SQL -  INSERT SELECT UPDATE DELETE
 
-# CUIDADO: fazendo delete sem where
-cursor.execute(
-    f'DELETE FROM {TABLE_NAME}'
-)
-
-# DELETE mais cuidadoso
-cursor.execute(
-    f'DELETE FROM sqlite_sequence WHERE name="{TABLE_NAME}"'
-)
-connection.commit()
-
 # Cria a tabela
 cursor.execute(
     f'CREATE TABLE IF NOT EXISTS {TABLE_NAME}'
@@ -38,6 +27,17 @@ cursor.execute(
 )
 connection.commit()
 
+# CUIDADO: fazendo delete sem where
+cursor.execute(
+    f'DELETE FROM {TABLE_NAME}'
+)
+
+# DELETE mais cuidadoso
+cursor.execute(
+    f'DELETE FROM sqlite_sequence WHERE name="{TABLE_NAME}"'
+)
+connection.commit()
+
 # Registrar valores nas colunas da tabela
 sql = (
     f'INSERT INTO {TABLE_NAME} '
@@ -45,13 +45,8 @@ sql = (
     'VALUES '
     '(:nome, :peso)'
 )
-# cursor.execute(sql, ['Joana', 4])
-# cursor.executemany(
-#     sql,
-#     (
-#         ('Joana', 4), ('Luiz', 5)
-#     )
-# )
+
+# Inserindo dados
 cursor.execute(sql, {'nome': 'Sem nome', 'peso': 3})
 cursor.executemany(sql, (
     {'nome': 'Joãozinho', 'peso': 3},
@@ -61,7 +56,7 @@ cursor.executemany(sql, (
 ))
 connection.commit()
 
-
+# Selecionando dados
 if __name__ == '__main__':
     print(sql)
 
