@@ -5,9 +5,10 @@ def home(request):
     print('home')
 
     context = {
-        'text': 'Olá home'
+        'text': 'Olá Django primeiro projeto',
     }
 
+    # Puxando o HTML do template
     return render(
         request,
         'home/index.html',

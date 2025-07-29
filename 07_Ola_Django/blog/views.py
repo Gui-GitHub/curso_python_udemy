@@ -48,7 +48,7 @@ def exemplo(request):
     print('exemplo')
 
     context = {
-        'text': 'Olá exemplo',
+        'text': 'Olá exemplo blog',
         'title': 'Essa é uma página de exemplo - ',
     }
 
