@@ -4,6 +4,7 @@ from django.shortcuts import render
 def home(request):
     print('home')
 
+    # Chave e valor
     context = {
         'text': 'Olá Django primeiro projeto',
     }
