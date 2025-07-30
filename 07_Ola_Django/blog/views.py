@@ -19,7 +19,7 @@ def blog(request):
         context
     )
 
-
+# Função para que o id funcione como parâmetro na URL
 def post(request: HttpRequest, post_id: int):
     found_post: dict[str, Any] | None = None
 
@@ -28,6 +28,7 @@ def post(request: HttpRequest, post_id: int):
             found_post = post
             break
 
+    # Se não encontrar o post, lança um erro 404
     if found_post is None:
         raise Http404('Post não existe.')
 

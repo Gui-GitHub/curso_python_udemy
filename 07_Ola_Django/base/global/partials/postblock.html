@@ -2,7 +2,7 @@
 <article class="post">
   <header>
     <h2 class="post__title">
-      {# URL que lava para dentro do post em questão#}
+      {# URL que lava para dentro do post em questão via id (post.id) #}
       <a href="{% url 'blog:post' post.id %}">
         {{ post.title }}
       </a>
