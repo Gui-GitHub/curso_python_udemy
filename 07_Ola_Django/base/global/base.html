@@ -2,6 +2,7 @@
 {% include 'global/partials/head.html' %}
 {% include 'global/partials/menu.html' %}
 
+{# Se a variável existe eu mostro ela, senão não mostro #}
 {% if text %}
   <h1>{% block texto %}{% endblock texto %}</h1>
 {% endif %}

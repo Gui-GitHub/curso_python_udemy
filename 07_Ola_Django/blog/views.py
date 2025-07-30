@@ -9,7 +9,7 @@ def blog(request):
     print('blog')
 
     context = {
-        # 'text': 'Olá blog',
+        # Utilizando a variável posts de data.py
         'posts': posts
     }
 
@@ -32,7 +32,6 @@ def post(request: HttpRequest, post_id: int):
         raise Http404('Post não existe.')
 
     context = {
-        # 'text': 'Olá blog',
         'post': found_post,
         'title': found_post['title'] + ' - ',
     }

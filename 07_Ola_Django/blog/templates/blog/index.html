@@ -1,8 +1,11 @@
+{# Colocando os articos no blog #}
+
 {% extends 'global/base.html' %}
 
 {% block texto %} {{ text }} {% endblock texto %}
 
 {% block posts %}
+  {# For para exibir os posts #}
   {% for post in posts %}
     {% include 'global/partials/postblock.html' %}
   {% endfor %}

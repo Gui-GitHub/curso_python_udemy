@@ -1,6 +1,8 @@
+{# Criando os artigos dentro do blog #}
 <article class="post">
   <header>
     <h2 class="post__title">
+      {# URL que lava para dentro do post em questão#}
       <a href="{% url 'blog:post' post.id %}">
         {{ post.title }}
       </a>
