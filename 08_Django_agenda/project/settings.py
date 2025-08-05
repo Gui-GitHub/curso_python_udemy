@@ -75,7 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
-# Database
+# Database (usa SQLite por padrão)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
@@ -86,7 +86,7 @@ DATABASES = {
 }
 
 
-# Password validation
+# Password validation (padrões do django)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
+# Internationalization (Mudamos para Brasil, SP)
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'pt-br'

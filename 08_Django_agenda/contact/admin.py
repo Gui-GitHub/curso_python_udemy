@@ -2,11 +2,11 @@ from django.contrib import admin
 
 from contact import models
 
-
+# Configurando o admin do Django
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = 'id', 'first_name', 'last_name', 'phone', 'show',
-    ordering = '-id',
+    ordering = '-id', # ordena do maior para o menor
     # list_filter = 'created_date',
     search_fields = 'id', 'first_name', 'last_name',
     list_per_page = 10

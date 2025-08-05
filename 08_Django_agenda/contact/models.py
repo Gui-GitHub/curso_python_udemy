@@ -8,7 +8,7 @@ from django.utils import timezone
 # category (foreign key), show (boolean), picture (imagem)
 # owner (foreign key)
 
-
+# Aqui no models criamos as classes que representam as tabelas do banco de dados.
 class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
@@ -19,10 +19,10 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
-
+# Configurando os fiels
 class Contact(models.Model):
     first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50, blank=True)
+    last_name = models.CharField(max_length=50, blank=True) # blank=True permite que o campo seja opcional
     phone = models.CharField(max_length=50)
     email = models.EmailField(max_length=254, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
