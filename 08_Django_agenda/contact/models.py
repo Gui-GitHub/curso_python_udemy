@@ -10,6 +10,7 @@ from django.utils import timezone
 
 # Aqui no models criamos as classes que representam as tabelas do banco de dados.
 class Category(models.Model):
+    # Classe meta para definir o nome da tabela e plural para o Admin do Django
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
@@ -27,14 +28,14 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
-    show = models.BooleanField(default=True)
-    picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
-    category = models.ForeignKey(
+    show = models.BooleanField(default=True) # Já inicia o campo como True
+    picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/') # Caminho + ano + mês atual
+    category = models.ForeignKey( # Configurando uma chave estrangeira
         Category,
-        on_delete=models.SET_NULL,
+        on_delete=models.SET_NULL, # O que acontece caso algum dado da Category seja apagado
         blank=True, null=True
     )
-    owner = models.ForeignKey(
+    owner = models.ForeignKey( # A pessoa que criou o perfil, poderá edita-lo
         User,
         on_delete=models.SET_NULL,
         blank=True, null=True

@@ -14,7 +14,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_editable = 'first_name', 'last_name', 'show',
     list_display_links = 'id', 'phone',
 
-
+# Configurando o admin do Django para a Category
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = 'name',
