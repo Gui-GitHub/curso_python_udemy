@@ -7,6 +7,7 @@ from random import choice
 import django
 from django.conf import settings
 
+# Esse arquivo serve para gerar 1000 dados ficticios aleatórios
 DJANGO_BASE_DIR = Path(__file__).parent.parent
 NUMBER_OF_OBJECTS = 1000
 

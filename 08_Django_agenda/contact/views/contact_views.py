@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from contact.models import Contact
 
-
+# Essa função renderiza a página inicial com uma lista de contatos
 def index(request):
     contacts = Contact.objects \
         .filter(show=True)\
@@ -25,7 +25,7 @@ def index(request):
         context
     )
 
-
+# Aqui a search serve para buscar contatos com base no valor de pesquisa fornecido
 def search(request):
     search_value = request.GET.get('q', '').strip()
 
@@ -58,7 +58,7 @@ def search(request):
         context
     )
 
-
+# O contact view exibe os detalhes de um contato específico
 def contact(request, contact_id):
     # single_contact = Contact.objects.filter(pk=contact_id).first()
     single_contact = get_object_or_404(

@@ -1,10 +1,12 @@
 # type:ignore
 from django.urls import path
 
+# Importando as views do módulo contact
 from contact import views
 
 app_name = 'contact'
 
+# Configurando URLs para o módulo contact, cada URL chama uma view específica
 urlpatterns = [
     path('', views.index, name='index'),
     path('search/', views.search, name='search'),

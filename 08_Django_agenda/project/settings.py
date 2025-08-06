@@ -1,5 +1,6 @@
 # type: ignore
 # flake8: noqa
+# Ignorar erros de tipagem e flake8 nesse arquivo, pois é gerado automaticamente
 """
 Django settings for project project.
 
@@ -134,6 +135,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Configurações adicionais
 try:
     from project.local_settings import *
 except ImportError:
