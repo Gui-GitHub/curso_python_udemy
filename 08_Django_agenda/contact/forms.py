@@ -6,8 +6,9 @@ from django.core.exceptions import ValidationError
 
 from . import models
 
-
+# Formulário para criação e edição de contatos
 class ContactForm(forms.ModelForm):
+    # Campo para upload de imagem (opcional)
     picture = forms.ImageField(
         widget=forms.FileInput(
             attrs={
@@ -25,11 +26,13 @@ class ContactForm(forms.ModelForm):
             'picture',
         )
 
+    # Validação geral do formulário
     def clean(self):
         cleaned_data = self.cleaned_data
         first_name = cleaned_data.get('first_name')
         last_name = cleaned_data.get('last_name')
 
+        # Não permite que o primeiro nome seja igual ao sobrenome
         if first_name == last_name:
             msg = ValidationError(
                 'Primeiro nome não pode ser igual ao segundo',
@@ -40,9 +43,11 @@ class ContactForm(forms.ModelForm):
 
         return super().clean()
 
+    # Validação específica do campo first_name
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
 
+        # Exemplo de validação personalizada
         if first_name == 'ABC':
             self.add_error(
                 'first_name',
@@ -54,7 +59,7 @@ class ContactForm(forms.ModelForm):
 
         return first_name
 
-
+# Formulário para registro de novo usuário
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField(
         required=True,
@@ -73,6 +78,7 @@ class RegisterForm(UserCreationForm):
             'username', 'password1', 'password2',
         )
 
+    # Validação para garantir e-mail único
     def clean_email(self):
         email = self.cleaned_data.get('email')
 
@@ -84,7 +90,7 @@ class RegisterForm(UserCreationForm):
 
         return email
 
-
+# Formulário para atualização dos dados do usuário
 class RegisterUpdateForm(forms.ModelForm):
     first_name = forms.CharField(
         min_length=2,
@@ -102,6 +108,7 @@ class RegisterUpdateForm(forms.ModelForm):
         help_text='Required.'
     )
 
+    # Campos para alteração de senha (opcionais)
     password1 = forms.CharField(
         label="Password",
         strip=False,
@@ -125,6 +132,7 @@ class RegisterUpdateForm(forms.ModelForm):
             'username',
         )
 
+    # Salva as alterações do usuário, incluindo senha se informada
     def save(self, commit=True):
         cleaned_data = self.cleaned_data
         user = super().save(commit=False)
@@ -138,6 +146,7 @@ class RegisterUpdateForm(forms.ModelForm):
 
         return user
 
+    # Validação geral do formulário (verifica se as senhas batem)
     def clean(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
@@ -151,6 +160,7 @@ class RegisterUpdateForm(forms.ModelForm):
 
         return super().clean()
 
+    # Validação para garantir e-mail único ao atualizar
     def clean_email(self):
         email = self.cleaned_data.get('email')
         current_email = self.instance.email
@@ -164,6 +174,7 @@ class RegisterUpdateForm(forms.ModelForm):
 
         return email
 
+    # Validação da senha (caso informada)
     def clean_password1(self):
         password1 = self.cleaned_data.get('password1')
 
